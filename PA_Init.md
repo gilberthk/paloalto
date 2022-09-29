@@ -1,9 +1,7 @@
 <link href="style.css" rel="stylesheet"></link>
 
 <a class="top-link hide" href="#top">↑</a>
-<a name="top">
-# Table #
-</a>
+<a name="top"></a>
 
 # Palo Alto initialise
 > ### **Clear default setting**
