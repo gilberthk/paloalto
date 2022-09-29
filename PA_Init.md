@@ -1,3 +1,10 @@
+<link href="style.css" rel="stylesheet"></link>
+
+<a class="top-link hide" href="#top">↑</a>
+<a name="top">
+# Table #
+</a>
+
 # Palo Alto initialise
 > ### **Clear default setting**
 1. Connect PA with MGT port;
@@ -93,11 +100,68 @@ Back to the firewall GUI, retrieve the license.
 ![retrivev_license](Assets/retrieve_license.png)
 
 <br></br>
-# Firewall configure #
-<br></br>
-# Security Lifecycle Review #
 
-<style>
-* {font-family:'Courier New', monospace}
-g {color:green;}
-</style>
+# Firewall configure 
+
+## [HA](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-web-interface-help/device/device-high-availability/configure-ha-settings) 
+
+## Active/Passive ##
+
+- go to **Network** -> **Interfaces**, config two interface as the **Interface Type** are **HA**
+- Two interface: one for control link, one for data link
+![HA_setting](Assets/HA/HA1_interface.png)
+
+- Peer address: control link of HA2
+- device priority: higher index = lower priority = passive
+- Preemptive: allow higer priority PA back to service after revocery immediately
+<g> // heartbeat backup is not required.
+
+![HA_setting](Assets/HA/HA1_setting.png)
+<g>// it seems that Control, data, and Backup link requires different interface.
+
+<g>// suggest to use different subnet.
+
+
+![HA_setting](Assets/HA/HA1_setting_2.png)
+
+![HA_setting](Assets/HA/HA1_setting_3.png)
+
+- go back to **Dashboard**, add HA widget
+- Click **Sync to peer HA**
+
+## HA - Active/Active - the first HA ##
+- set WAN to static instead of DHCP
+- enble a new HA interface as **packet forwarding**
+
+![HA1_interface](Assets/HA/HA1_AA_interface.png)
+
+- go to **Devices** -> **High Availability**, enable **Active/Active**
+- **Device ID** represents the priority (0 as active primary, higher than 1)
+
+![HA1_setting](Assets/HA/HA1_AA_setting1.png)
+
+- define different interface as control, data, and packet forwarding
+
+![HA1_setting](Assets/HA/HA1_AA_setting2.png)
+![HA1_setting](Assets/HA/HA1_AA_setting3.png)
+
+- in **Active/Active config**, add a floating ip
+- recommend that the floating ips of different HA are set under different subnet
+  
+![HA1_setting](Assets/HA/HA1_AA_setting4.png)
+
+## the second HA
+
+- set the HA inerface on different PA
+
+![HA2_interface](Assets/HA/HA2_AA_interface.png)
+![HA2_setting](Assets/HA/HA2_AA_setting1.png)
+![HA2_setting](Assets/HA/HA2_AA_setting2.png)
+![HA2_setting](Assets/HA/HA2_AA_setting3.png)
+
+- go back to dashboard, click sync to peer, then manually sync the version
+
+![status](Assets/HA/HA_AA_status.png)
+
+<br></br>
+
