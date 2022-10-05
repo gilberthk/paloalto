@@ -4,6 +4,15 @@
 <a name="top"></a>
 
 # Palo Alto initialise
+
+### **table of contents**
+
+1. [Initialise the fw](#clear-default-setting)
+2. [Internet accessing](#configuration)
+3. [Activate license](#partner-license-active)
+4. [extend license](#extend license)
+5. [high availability](#ha)
+
 > ### **Clear default setting**
 1. Connect PA with MGT port;
 2. Set local host ip under the same subnet with PA (default 192.168.1.1/24);
@@ -97,6 +106,15 @@ Back to the firewall GUI, retrieve the license.
 
 ![retrivev_license](Assets/retrieve_license.png)
 
+## License Extendsion
+
+In **Partner protal**, goto **Evaluation** -> **Evaluation Requests**, select the device you want to extend license for.
+![related](Assets/relate.png)
+
+![click](Assets/click_extend.png)
+
+![extend](Assets/extend_request.png)
+
 <br></br>
 
 # Firewall configure 
@@ -163,3 +181,30 @@ Back to the firewall GUI, retrieve the license.
 
 <br></br>
 
+
+<style>
+
+* {font-family:'Courier New', monospace;}
+g {color:green;}
+
+/* Style the button */
+.top-link {
+  transition:       all .25s ease-in-out;
+  position:         fixed;
+  bottom:           0;
+  right:            0;
+  display:          inline-flex;
+  color:            #000000;
+
+  cursor:           pointer;
+  align-items:      center;
+  justify-content:  center;
+  margin:           0 2em 2em 0;
+  border-radius:    50%;
+  padding:          .25em;
+  width:            1em;
+  height:           1em;
+  background-color: #F8F8F8;
+}
+
+</style>
