@@ -10,7 +10,7 @@
 1. [Initialise the fw](#clear-default-setting)
 2. [Internet accessing](#configuration)
 3. [Activate license](#partner-license-active)
-4. [extend license](#extend license)
+4. [extend license](#license-extendsion)
 5. [high availability](#ha)
 
 > ### **Clear default setting**
