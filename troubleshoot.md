@@ -7,7 +7,8 @@
 
 [Session is timeout](#session-is-timeout)
 
-[Migrate existing UFW Panorama](#)
+[add existing UFW to Panorama](#add-existing-ufw-panorama)
+
 <br></br>
 
 # <red>**Failed to fetch certificates**
